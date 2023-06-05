@@ -18,6 +18,7 @@ void bfs_graph(int node){
         q.pop();
         for(auto i:graph[currnode]){
             if(!visited[i]){
+                visited[i]=1;
                 q.push(i);
             }
         }
@@ -32,13 +33,14 @@ void bfs_graph_size(int node){
     q.push(node);
     while (!q.empty())
     {
-        int currnode=q.front();
-        int size=q.size();//keep track of no of nodes in a level
+        int size=q.size(),sz=size;//keep track of no of nodes in a level
         while (size)
         {
+            int currnode=q.front();
             q.pop();
             for(auto i:graph[currnode]){
                 if(!visited[i]){
+                    visited[i]=1;
                     q.push(i);
                 }
             }
