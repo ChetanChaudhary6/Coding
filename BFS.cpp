@@ -74,10 +74,10 @@ void bfs_btree_size(Node*root){
     q.push(root);
     while (!q.empty())
     {
-        root=q.front();
         int size=q.size();
         while (size)
         {
+            root=q.front();
             q.pop();
             q.push(root->left);
             q.push(root->right);
