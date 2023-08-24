@@ -18,7 +18,6 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
     //order_of_key(k) returns count of elements strictly smaller than k;
 
 int getInversions(int *arr, int n){
-    // Write your code here.
     ordered_set<int> os;
     os.insert(arr[n-1]);
     int c=0;
